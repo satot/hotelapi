@@ -32,6 +32,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'guard'
   gem 'guard-rspec'
+  gem 'factory_girl_rails'
 end
 
 group :development do
