@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: hotelapi_production
-  username: hotelapi
-  password: <%= ENV['KALIGO_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  username: <%= ENV['HOTELAPI_DATABASE_USERNAME'] %>
+  password: <%= ENV['HOTELAPI_DATABASE_PASSWORD'] %>

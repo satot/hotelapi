@@ -31,7 +31,7 @@ module Kaligo
     config.api_only = true
     config.cache_store = :redis_store, {
       host: ENV["REDIS_HOST"] || "localhost",
-      port: 6379,
+      port: ENV["REDIS_PORT"] || 6379,
       db: 0,
       namespace: "cache"
     }
