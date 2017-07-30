@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-  resources :suppliers
+  resources :suppliers, only: [:index, :show]
 
   namespace :v1, defaults: {format: 'json'} do
-    resources :search
+    resources :search, only: [:index]
   end
-
-  # Handle 404
-  get '*path', controller: 'application', action: 'render_404'
 end
