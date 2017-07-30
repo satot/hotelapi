@@ -7,7 +7,7 @@ RSpec.describe "search API", :type => :request do
       checkin: "20170701",
       checkout: "20170704",
       destination: "",
-      guest: "2"
+      guests: "2"
     }
   end
   let(:valid_params) do
@@ -15,7 +15,7 @@ RSpec.describe "search API", :type => :request do
       checkin: "20170701",
       checkout: "20170704",
       destination: "Singapore",
-      guest: "2",
+      guests: "2",
       suppliers: "suppliers1"
     }
   end
