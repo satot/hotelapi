@@ -13,12 +13,15 @@ module V1
       end
     end
 
-    def fetch_hotels suppliers
-      if suppliers.empty?
+    def fetch_hotels suppliers = []
+      suppliers = if suppliers.empty?
         Supplier.all
       else
         Supplier.find_by_names(suppliers)
-      end.map{|s| s.fetch_from_url}.flatten
+      end
+      Parallel.map(suppliers, in_threads: 5) do |s|
+        s.fetch_from_url
+      end.flatten
     end
 
     def find_cheapest hotels
